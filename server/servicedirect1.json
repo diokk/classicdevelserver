@@ -1,0 +1,40 @@
+{
+  "senin": {
+    "A2.18": [
+      {
+        "str_kelas": "Class - A",
+        "matakuliah": "Data Structures and Algorithms",
+        "mk_id": "1ce3aba",
+        "kelas": "A",
+        "jam_mulai": "07:30",
+        "jam_selesai": "09:30",
+        "karyawan_id": "f9de172",
+        "dosen": "Adharul Muttaqin",
+        "prodi": "ILKOM",
+        "urut": "1",
+        "urut_selesai": "4",
+        "praktikum": "0",
+        "repeat_on": "monthly",
+        "tgl_mulai": "2015-06-29",
+        "tgl_selesai": "2015-07-11"
+      },
+      {
+        "str_kelas": "Class - B",
+        "matakuliah": "Computer Networks ",
+        "mk_id": "5ab1f5a",
+        "kelas": "B",
+        "jam_mulai": "07:30",
+        "jam_selesai": "09:30",
+        "karyawan_id": "6b81d38",
+        "dosen": "Eko Setiawan",
+        "prodi": "ILKOM",
+        "urut": "1",
+        "urut_selesai": "4",
+        "praktikum": "0",
+        "repeat_on": "monthly",
+        "tgl_mulai": "2015-06-29",
+        "tgl_selesai": "2015-07-11"
+      },
+    ],
+  },
+  
