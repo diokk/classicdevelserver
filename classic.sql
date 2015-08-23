@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 22, 2015 at 10:57 AM
+-- Generation Time: Aug 23, 2015 at 12:15 PM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.27
 
@@ -27,23 +27,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `course` (
-  `mk_id` char(10) NOT NULL,
-  `mk_name` char(100) NOT NULL,
+  `idCourse` char(10) NOT NULL,
+  `courseName` char(100) NOT NULL,
   `is_active` tinyint(1) NOT NULL,
-  PRIMARY KEY (`mk_id`)
+  PRIMARY KEY (`idCourse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`mk_id`, `mk_name`, `is_active`) VALUES
+INSERT INTO `course` (`idCourse`, `courseName`, `is_active`) VALUES
 ('0432e44', 'Advanced Computational Mathematics', 1),
 ('1194545', 'Operating System', 1),
 ('1584d83', 'Advanced Programming', 1),
 ('1ce3aba', 'Data Structures and Algorithms', 1),
 ('221e57a', 'Software Engineering', 1),
-('22e56g', 'Jaringan', 1),
+('22e56g', 'Jaringan', 0),
 ('5ab1f5a', 'Computer Networks', 1),
 ('608da04', 'Computer Architecture and Organization', 1),
 ('6729058', 'Digital Systems', 1),
@@ -52,7 +52,8 @@ INSERT INTO `course` (`mk_id`, `mk_name`, `is_active`) VALUES
 ('c7f3d99', 'Database Systems', 1),
 ('da7be34', 'Basic Programming', 1),
 ('e555e9f', 'System Analysis and Design', 1),
-('ebbc7b3', 'Probability and Statistics', 1);
+('ebbc7b3', 'Probability and Statistics', 1),
+('mk1010', 'Web Programming', 1);
 
 -- --------------------------------------------------------
 
@@ -187,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `teaching` (
   `idCourse` char(10) NOT NULL,
   `idLecturer` char(10) NOT NULL,
   PRIMARY KEY (`idTeaching`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
 
 --
 -- Dumping data for table `teaching`
@@ -230,7 +231,8 @@ INSERT INTO `teaching` (`idTeaching`, `idCourse`, `idLecturer`) VALUES
 (35, '6729058', '6915a0d'),
 (36, '1194545', '6915a0d'),
 (37, '1ce3aba', 'f9de172'),
-(38, '22e56g', 'f9de172');
+(38, '22e56g', 'f9de172'),
+(39, 'mk1010', '8349ea5');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

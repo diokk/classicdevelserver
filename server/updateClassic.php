@@ -18,7 +18,7 @@ while ($row = mysql_fetch_assoc($course_result)) {
 }
 
 //ambil json
-$raw= file_get_contents("http://localhost/classicdevel/server/servicedirect.json");
+$raw= file_get_contents("http://localhost/classicserver/server/servicedirect.json");
 echo "<pre>";
 //ngolah data json biar gak duplicate
 $array=json_decode($raw,1);
@@ -74,7 +74,7 @@ if(isset($db_lecturer)){
 $list_mk_id_db=array();
 if(isset($db_course)){
 	foreach($db_course as $key_mk=>$val_mk){
-		$list_mk_id_db[]=$val_mk['mk_id'];
+		$list_mk_id_db[]=$val_mk['idCourse'];
 	}
 }
 
@@ -106,15 +106,15 @@ if(isset($db_course)){
 			{
 				$mk_id_new = $id_course;
 				$mk_name_new = $name_course;
-				echo "insert into course (mk_id,mk_name,is_active) values ('$mk_id_new','$mk_name_new','1')<br>";
-				$insert_lecturer = mysql_query("insert into course (mk_id,mk_name,is_active) values ('$mk_id_new','$mk_name_new','1')");
+				echo "insert into course (idCourse,courseName,is_active) values ('$mk_id_new','$mk_name_new','1')<br>";
+				$insert_lecturer = mysql_query("insert into course (idCourse,courseName,is_active) values ('$mk_id_new','$mk_name_new','1')");
 
 			}
       else
       {
           //update old MK ID and still active to 1
           $mk_id_new      = $id_course;
-  				$update_sql     = "update course set is_active='1' where mk_id='".$mk_id_new."'";
+  				$update_sql     = "update course set is_active='1' where idCourse='".$mk_id_new."'";
           $update_aktive  = mysql_query($update_sql);
       }
 
@@ -151,22 +151,6 @@ if(isset($db_course)){
 			}
 		}
     /*end of syncronize table teaching*/
-
-			//print_r($val['mk']);
-			/*foreach ($val['mk'] as $key_mk=>$val_mk) {
-				//select * from courses where mk_id=$val_mk['mk_id']
-					//cek if mk_id tidak ada, maka insert
-					// else if mk_id ada dan ada perubahan pada atribut lain (nama,kode_mk) maka update perubahannya
-					    // kalo mk_id ada tp ga ada perubahan gak usah diinsert
-
-				if(!in_array($val_mk['mk_id'], $list_mk_id_db))
-				{
-					print_r($val_mk['mk_id']);
-					echo "<br/>";
-
-				}
-
-			}*/
 
 
 
