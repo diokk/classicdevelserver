@@ -18,8 +18,6 @@ while($row = mysql_fetch_assoc($result))
 
 $arrayName = array('status' => true, 'data_mk' => $db_mk);
 echo json_encode($arrayName);
-
-
 mysql_close($con);
 
 ?>

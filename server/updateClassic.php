@@ -120,8 +120,9 @@ if(isset($db_course)){
 
 		}
     /*set all TEACHING is_active on database to 0*/
+
     mysql_query("SET SQL_SAFE_UPDATES = 0;");
-    mysql_query("update teaching set is_active='0' where 1=1;");
+    //mysql_query("update teaching set is_active='0' where 1=1;");
     /*syncronize table teaching*/
 		foreach ($array as $key => $value) { //hari
 			foreach ($value as $key_1 => $value_1) { //ruang
@@ -135,17 +136,17 @@ if(isset($db_course)){
             }
 
             if(count($id_teaching)==0){
-              $sql="insert into teaching (idTeaching,idCourse,idLecturer,is_active) values (NULL,'".$value_2['mk_id']."','".$value_2['karyawan_id']."','1');";
+              $sql="insert into teaching (idTeaching,idCourse,idLecturer) values (NULL,'".$value_2['mk_id']."','".$value_2['karyawan_id']."');";
               echo $sql."<br/>";
               $result=mysql_query($sql);
 				 		}
-            else
-            {
+           // else
+           // {
               //update old TEACHING ID and still active to 1
-              $mk_id_new      = $id_course;
-      				$update_sql     = "update teaching set is_active='1' where idTeaching='".$id_teaching[0]['idTeaching']."'";
-              $update_aktive  = mysql_query($update_sql);
-            }
+            //  $mk_id_new      = $id_course;
+      	//			$update_sql     = "update teaching set is_active='1' where idTeaching='".$id_teaching[0]['idTeaching']."'";
+          //    $update_aktive  = mysql_query($update_sql);
+            //}
 				 	}
 				}
 			}
